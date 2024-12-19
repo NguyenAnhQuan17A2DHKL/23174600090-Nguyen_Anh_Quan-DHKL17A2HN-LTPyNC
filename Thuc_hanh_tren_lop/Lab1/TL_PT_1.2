@@ -1,0 +1,21 @@
+So sánh lớp XMLReader và JSONReader
+* Giống nhau:
+- Mục đích: Cả hai lớp đều được thiết kế để đọc và hiển thị dữ liệu từ các định dạng 
+file khác nhau (XML và JSON)
+- Cấu trúc: Cả hai lớp đều có các phương thức tương tự nhau: __init__, read_data, và 
+display_data. Điều này cho thấy một cấu trúc lớp tương tự nhau, thể hiện nguyên 
+tắc DRY (Don't Repeat Yourself) trong lập trình
+- Sử dụng thư viện: Cả hai lớp đều sử dụng các thư viện hỗ trợ tương ứng để xử lý 
+dữ liệu (ElementTree cho XML và json cho JSON)
+
+* Khác nhau:
+- Định dạng dữ liệu: Lớp XMLReader làm việc với dữ liệu có cấu trúc dạng cây, trong khi lớp 
+JSONReader làm việc với dữ liệu dạng cặp key-value
+- Cách thức đọc dữ liệu:
+    +) XMLReader: Sử dụng ET.parse để phân tích cú pháp file XML và tạo một cây DOM. Sau đó, sử dụng
+    các phương thức như findall và find để tìm kiếm các phần tử và thuộc tính
+    +) JSONReader: Sử dụng json.load để đọc dữ liệu JSON từ file và chuyển đổi 
+    nó thành một cấu trúc dữ liệu Python (thường là một dictionary hoặc list)
+- Cách thức hiển thị dữ liệu: Cả hai lớp đều sử dụng vòng lặp để duyệt qua dữ liệu và 
+in ra các thông tin cần thiết. Tuy nhiên, do cấu trúc dữ liệu khác nhau nên
+cách truy cập và hiển thị dữ liệu cũng khác nhau

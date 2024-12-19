@@ -1,0 +1,33 @@
+1) Cấu trúc XML:
+- XML là một ngôn ngữ đánh dấu được sử dụng để lưu trữ dữ liệu
+- Nó có cấu trúc dạng cây, với các phần tử (element) được bao bọc bởi các thẻ mở đầu và đóng lại (<element></element>)
+- Các phần tử có thể chứa các thuộc tính (attribute) để cung cấp thêm thông tin
+- XML có khả năng tự mô tả, nghĩa là cấu trúc của dữ liệu được định nghĩa trong chính tài liệu XML
+
+2) Sự khác biệt giữa XML và JSON:
+    a) Cấu trúc:
+        - XML: Dạng cây, dựa trên thẻ
+        - JSON: Dạng cặp key-value, dựa trên dấu ngoặc nhọn
+    b) Đọc hiểu:
+        - XML: Cần hiểu về cú pháp XML
+        - JSON: Dễ đọc hiểu hơn
+    c) Kích thước file:
+        - XML: Thường lớn hơn do các thẻ
+        - JSON: Thường nhỏ gọn hơn
+    d) Sử dụng:
+        - XML: Phổ biến trong cấu hình, truyền dữ liệu
+        - JSON: Phổ biến trong giao tiếp API, lưu trữ dữ liệu cấu trúc
+
+3) Phân tích cách trích xuất thông tin từ các node và thuộc tính trong XML:
+- Sử dụng "xml.etree.ElementTree" để:
+    +) Đọc file XML: ET.parse(self.file_path)
+    +) Lấy root element: tree.getroot()
+    +) Tìm kiếm các phần tử con: self.data.findall('product')
+    +) Truy cập vào giá trị của các phần tử: product.find('name').text
+    +) In ra kết quả: print(f"Product: {name}, ...")
+- Giải thích chi tiết:
+    +) Node: Mỗi phần tử trong XML được gọi là một node
+    +) Thuộc tính: Các thông tin bổ sung của một node được gọi là thuộc tính
+    +) Phương thức findall: Dùng để tìm tất cả các phần tử con có tên cụ thể
+    +) Phương thức find: Dùng để tìm phần tử con đầu tiên có tên cụ thể
+    +) Thuộc tính text: Dùng để lấy giá trị văn bản của một phần tử
